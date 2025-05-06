@@ -1,5 +1,4 @@
-const CardComponent = ({ item }) => (
-    
+const LoadingCard = () => (
     <div
       style={{
         display: 'grid',
@@ -13,10 +12,10 @@ const CardComponent = ({ item }) => (
         boxSizing: 'border-box',
       }}
     >
-      <h3 style={{ margin: '0 0 8px 0', fontSize: '18px', fontWeight: 600 }}>{item?.id}</h3>
-      <p style={{ margin: 0, fontSize: '14px', color: '#555' }}>{item?.name}</p>
+      <div className="shimmer shimmer-title" />
+      <div className="shimmer shimmer-line" />
+      <div className="shimmer shimmer-line short" />
     </div>
   );
 
-  export default CardComponent
-  
+  export default LoadingCard
