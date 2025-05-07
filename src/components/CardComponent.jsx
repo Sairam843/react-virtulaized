@@ -1,22 +1,21 @@
-const CardComponent = ({ item }) => (
-    
-    <div
-      style={{
-        display: 'grid',
-        gridTemplateRows: 'auto 1fr',
-        gap: '12px',
-        padding: '16px',
-        backgroundColor: '#ffffff',
-        borderRadius: '12px',
-        boxShadow: '0 4px 16px rgba(0, 0, 0, 0.06)',
-        height: '100%',
-        boxSizing: 'border-box',
-      }}
-    >
-      <h3 style={{ margin: '0 0 8px 0', fontSize: '18px', fontWeight: 600 }}>{item?.id}</h3>
-      <p style={{ margin: 0, fontSize: '14px', color: '#555' }}>{item?.name}</p>
-    </div>
-  );
+const CardComponent = ({ item, metadata }) => {
+  return (
+    <div style={{
+      display: 'flex',
+      padding: '10px 20px',
+      alignItems: 'center',
+      borderBottom: '1px solid #eee',
+      backgroundColor: '#fff',
+    }}>
+      {metadata.map(({ key }) => (
+        <div key={key} style={{ flex: 1 }}>{item[key]}</div>
+      ))}
+      <div style={{ width: 100, textAlign: 'right' }}>
 
-  export default CardComponent
-  
+        hi
+      </div>
+    </div>
+  )
+};
+
+export default CardComponent
